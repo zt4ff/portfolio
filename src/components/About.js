@@ -33,7 +33,6 @@ const TitleRow = () => {
       {titles.map((title) => (
         <SwiperSlide key={title}>
           {({ isActive, isNext, isPrev }) => {
-            if (isActive) console.log(title);
             return (
               <p
                 style={{
@@ -63,12 +62,12 @@ const Summary = () => {
 
 export const About = () => {
   return (
-    <div style={{ color: "red" }} className="height-100">
-      <div className="row h-100">
-        <div className="col-lg-6 h-100 d-flex justify-content-center align-items-center">
+    <div style={{ color: "red"}}>
+      <div className="row">
+        <div style={{margin: "100px 0"}} className="col-lg-6 h-100 d-flex justify-content-center align-items-center">
           <Summary />
         </div>
-        <div className="col-lg-6 h-100 d-flex justify-content-center align-items-center">
+        <div style={{margin: "100px 0"}} className="col-lg-6 h-100 d-flex justify-content-center align-items-center">
           <TitleRow />
         </div>
       </div>
