@@ -29,15 +29,22 @@ const TitleRow = () => {
   SwiperCore.use([Autoplay, EffectFade]);
 
   return (
-    <Swiper className="test w-100" style={{ height: "50vh" }} {...options}>
+    <Swiper className="w-100" style={{ height: "50vh" }} {...options}>
       {titles.map((title) => (
         <SwiperSlide key={title}>
           {({ isActive, isNext, isPrev }) => {
-            if (isActive) console.log(title)
-            return <p style={{
-                marginLeft: isActive ? 25 : 0,
-                opacity: isActive ? 1 : 0.5 
-            }} className={`large-font ${isActive ? 'mr-1' : ''}`}>{title}</p>;
+            if (isActive) console.log(title);
+            return (
+              <p
+                style={{
+                  marginLeft: isActive ? 25 : 0,
+                  opacity: isActive ? 1 : 0.5,
+                }}
+                className={`large-font ${isActive ? "mr-1" : ""}`}
+              >
+                {title}
+              </p>
+            );
           }}
         </SwiperSlide>
       ))}
@@ -47,7 +54,7 @@ const TitleRow = () => {
 
 const Summary = () => {
   return (
-    <div>
+    <div className="text-center">
       <h1>Hi, My name is Kayode Oluwasegun</h1>
       <p>I like creating things</p>
     </div>
@@ -58,10 +65,10 @@ export const About = () => {
   return (
     <div style={{ color: "red" }} className="height-100">
       <div className="row h-100">
-        <div className="col-lg-6 h-100 p-lg-5 d-flex justify-content-center align-items-center">
+        <div className="col-lg-6 h-100 d-flex justify-content-center align-items-center">
           <Summary />
         </div>
-        <div className="col-lg-6 h-100 p-lg-5 d-flex justify-content-center align-items-center">
+        <div className="col-lg-6 h-100 d-flex justify-content-center align-items-center">
           <TitleRow />
         </div>
       </div>

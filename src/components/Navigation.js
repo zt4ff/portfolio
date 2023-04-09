@@ -14,7 +14,7 @@ const routes = [
 
 export const Navigation = () => {
   return (
-    <Navbar bg="dark" color="#fff" expand="lg" className="height-10 border-bottom-blue" sticky="top">
+    <Navbar color="#fff" expand="lg" sticky="top">
       <Navbar.Brand href="#home">Kayode Oluwasegun</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
