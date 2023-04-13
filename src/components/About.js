@@ -54,7 +54,7 @@ const TitleRow = () => {
 const Summary = () => {
   return (
     <div className="text-center">
-      <h1>Hi, My name is Kayode Oluwasegun</h1>
+      <h1>Hi, My name is Kayode Oluwasegun Timothy</h1>
       <p>I like creating things</p>
     </div>
   );
