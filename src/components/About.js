@@ -64,10 +64,10 @@ export const About = () => {
   return (
     <div style={{ color: "red"}}>
       <div className="row">
-        <div style={{margin: "100px 0"}} className="col-lg-6 h-100 d-flex justify-content-center align-items-center">
+        <div style={{margin: "100px 0"}} className="col-lg-6 h-90 d-flex justify-content-center align-items-center">
           <Summary />
         </div>
-        <div style={{margin: "100px 0"}} className="col-lg-6 h-100 d-flex justify-content-center align-items-center">
+        <div style={{margin: "100px 0"}} className="col-lg-6 h-90 d-flex justify-content-center align-items-center">
           <TitleRow />
         </div>
       </div>
