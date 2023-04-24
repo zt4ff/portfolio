@@ -1,39 +1,130 @@
 import React from "react";
-import Form from "react-bootstrap/Form";
-import Button from 'react-bootstrap/Button';
+import { Formik, Form as FormikForm, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+
+const contactFormValidationSchema = Yup.object().shape({
+  name: Yup.string().required("Name is required please"),
+  email: Yup.string()
+    .email("Email must be a valid email")
+    .required("Email is required please"),
+  subject: Yup.string().required("Subject is required please"),
+  message: Yup.string()
+    .required("Message is required")
+    .min(5, "Message should be more than 5 characters"),
+});
+
+const initialValues = {
+  name: "",
+  email: "",
+  subject: "",
+  message: "",
+};
 
 const ContactForm = () => {
   return (
-    <Form className="w-100">
-      <Form.Group className="mb-4" controlId="formBasicText">
-        <Form.Control type="text" placeholder="Name" />
-      </Form.Group>
-      <Form.Group className="mb-4" controlId="formBasicEmail">
-        <Form.Control type="email" placeholder="Enter email" />
-      </Form.Group>
-      <Form.Group className="mb-4" controlId="formBasicTest">
-        <Form.Control type="text" placeholder="Subject" />
-      </Form.Group>
-      <Form.Group className="mb-4" controlId="formBasicText">
-        <textarea rows={5} className="form-control" placeholder="Message"></textarea>
-      </Form.Group>
-      <Button variant="primary" type="submit">
-        Send Message
-      </Button>
-    </Form>
+    <Formik
+      initialValues={initialValues}
+      validationSchema={contactFormValidationSchema}
+      onSubmit={(values) => {
+        console.log(values);
+      }}
+    >
+      {(formik) => {
+        const { isValid, dirty } = formik;
+        return (
+          <div className="container">
+            <h1>Send me a message</h1>
+            <FormikForm>
+              <div className="form-row">
+                <Field
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="Name"
+                  className="form-control mt-4"
+                />
+                <ErrorMessage name="name" component="span" className="error" />
+              </div>
+
+              <div className="form-row">
+                <Field
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Email"
+                  className="form-control mt-4"
+                />
+                <ErrorMessage name="email" component="span" className="error" />
+              </div>
+
+              <div className="form-row">
+                <Field
+                  type="text"
+                  name="subject"
+                  id="subject"
+                  placeholder="Subject"
+                  className="form-control mt-4"
+                />
+                <ErrorMessage
+                  name="subject"
+                  component="span"
+                  className="error"
+                />
+              </div>
+
+              <div className="form-row">
+                <Field name="message">
+                  {({ field }) => (
+                    <div>
+                      <textarea
+                        rows={5}
+                        className="form-control mt-4"
+                        placeholder="Message"
+                        {...field}
+                        style={{
+                          resize: "none",
+                        }}
+                      ></textarea>
+                    </div>
+                  )}
+                </Field>
+                <ErrorMessage
+                  name="message"
+                  component="span"
+                  className="error"
+                />
+              </div>
+
+              <button
+                type="submit"
+                className={`btn mt-4 ${
+                  !(dirty && isValid) ? "btn-secondary" : "btn-primary"
+                }`}
+                disabled={!(dirty && isValid)}
+              >
+                Sign In
+              </button>
+            </FormikForm>
+          </div>
+        );
+      }}
+    </Formik>
   );
 };
 
 const Contact = () => {
   return (
-    <div style={{ color: "red", border: "1px solid red" }} className="height-100 d-flex justify-content-center align-items-center">
-      {/* <div className="row h-100"> */}
-        <div className="col-lg-9 h-100 d-flex justify-content-center align-items-center">
-          <ContactForm />
-        {/* </div> */}
+    <div
+      style={{ color: "red", border: "1px solid red" }}
+      className="height-100 d-flex justify-content-center align-items-center"
+    >
+      <div className="row h-100">
+      <div className="col-lg-9 h-100 d-flex justify-content-center align-items-center">
+        <ContactForm />
+        </div>
       </div>
     </div>
   );
 };
 
-export default Contact
+export default Contact;
