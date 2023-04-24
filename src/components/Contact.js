@@ -43,7 +43,7 @@ const ContactForm = () => {
                   placeholder="Name"
                   className="form-control mt-4"
                 />
-                <ErrorMessage name="name" component="span" className="error" />
+                <ErrorMessage name="name" component="span" className="text-danger" />
               </div>
 
               <div className="form-row">
@@ -54,7 +54,7 @@ const ContactForm = () => {
                   placeholder="Email"
                   className="form-control mt-4"
                 />
-                <ErrorMessage name="email" component="span" className="error" />
+                <ErrorMessage name="email" component="span" className="text-danger" />
               </div>
 
               <div className="form-row">
@@ -68,7 +68,7 @@ const ContactForm = () => {
                 <ErrorMessage
                   name="subject"
                   component="span"
-                  className="error"
+                  className="text-danger"
                 />
               </div>
 
@@ -91,7 +91,7 @@ const ContactForm = () => {
                 <ErrorMessage
                   name="message"
                   component="span"
-                  className="error"
+                  className="text-danger"
                 />
               </div>
 
@@ -115,7 +115,6 @@ const ContactForm = () => {
 const Contact = () => {
   return (
     <div
-      style={{ color: "red", border: "1px solid red" }}
       className="height-100 d-flex justify-content-center align-items-center"
     >
       <div className="row h-100">
