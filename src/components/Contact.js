@@ -27,8 +27,7 @@ const ContactForm = () => {
         console.log(values);
       }}
     >
-      {(formik) => {
-        const { isValid, dirty } = formik;
+      {() => {
         return (
           <div className="container">
             <h1 className="text-primary text-center">Send me a message 📩</h1>
