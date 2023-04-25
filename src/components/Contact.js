@@ -7,7 +7,6 @@ const contactFormValidationSchema = Yup.object().shape({
   email: Yup.string()
     .email("Email must be a valid email")
     .required("Email is required please"),
-  subject: Yup.string().required("Subject is required please"),
   message: Yup.string()
     .required("Message is required")
     .min(5, "Message should be more than 5 characters"),
@@ -16,7 +15,6 @@ const contactFormValidationSchema = Yup.object().shape({
 const initialValues = {
   name: "",
   email: "",
-  subject: "",
   message: "",
 };
 
@@ -33,17 +31,25 @@ const ContactForm = () => {
         const { isValid, dirty } = formik;
         return (
           <div className="container">
-            <h1>Send me a message</h1>
+            <h1 className="text-primary text-center">Send me a message 📩</h1>
+            <h4>
+              Got a question or proposal, or just want to say hello? Go ahead.
+            </h4>
             <FormikForm>
               <div className="form-row">
                 <Field
                   type="text"
                   name="name"
                   id="name"
-                  placeholder="Name"
-                  className="form-control mt-4"
+                  placeholder="Enter your name"
+                  className="form-control form-control-lg mt-4"
+                  style={{ borderRadius: "0" }}
                 />
-                <ErrorMessage name="name" component="span" className="text-danger" />
+                <ErrorMessage
+                  name="name"
+                  component="span"
+                  className="text-danger"
+                />
               </div>
 
               <div className="form-row">
@@ -51,22 +57,12 @@ const ContactForm = () => {
                   type="email"
                   name="email"
                   id="email"
-                  placeholder="Email"
-                  className="form-control mt-4"
-                />
-                <ErrorMessage name="email" component="span" className="text-danger" />
-              </div>
-
-              <div className="form-row">
-                <Field
-                  type="text"
-                  name="subject"
-                  id="subject"
-                  placeholder="Subject"
-                  className="form-control mt-4"
+                  placeholder="Enter your email"
+                  className="form-control form-control-lg mt-4"
+                  style={{ borderRadius: "0" }}
                 />
                 <ErrorMessage
-                  name="subject"
+                  name="email"
                   component="span"
                   className="text-danger"
                 />
@@ -78,11 +74,12 @@ const ContactForm = () => {
                     <div>
                       <textarea
                         rows={5}
-                        className="form-control mt-4"
-                        placeholder="Message"
+                        className="form-control form-control-lg mt-4"
+                        placeholder="Hi, I think we need a fullstack developer for our products at XYZ. How soon can you hop on to discuss this?"
                         {...field}
                         style={{
                           resize: "none",
+                          borderRadius: "0",
                         }}
                       ></textarea>
                     </div>
@@ -97,12 +94,10 @@ const ContactForm = () => {
 
               <button
                 type="submit"
-                className={`btn mt-4 ${
-                  !(dirty && isValid) ? "btn-secondary" : "btn-primary"
-                }`}
-                disabled={!(dirty && isValid)}
+                style={{ borderRadius: "0" }}
+                className="btn btn-lg mt-4 btn-primary"
               >
-                Sign In
+                Send Message
               </button>
             </FormikForm>
           </div>
@@ -114,12 +109,10 @@ const ContactForm = () => {
 
 const Contact = () => {
   return (
-    <div
-      className="height-100 d-flex justify-content-center align-items-center"
-    >
+    <div className="height-100 d-flex justify-content-center align-items-center">
       <div className="row h-100">
-      <div className="col-lg-9 h-100 d-flex justify-content-center align-items-center">
-        <ContactForm />
+        <div className="col-lg-9 h-100 d-flex justify-content-center align-items-center">
+          <ContactForm />
         </div>
       </div>
     </div>
