@@ -20,13 +20,13 @@
 }
 
 .large-font {
-  font-size: 50px;
+  font-size: 45px;
   font-weight: bold;
 }
 
 @media screen and (max-width: 600px) {
   .large-font {
-    font-size: 36px;
+    font-size: 26px;
   }
 }
 
