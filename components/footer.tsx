@@ -1,8 +1,8 @@
-import Link from "next/link"
-import { Github, Linkedin, Twitter } from "lucide-react"
+import Link from "next/link";
+import { Github, Linkedin, Twitter } from "lucide-react";
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear()
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="border-t py-6 md:py-0">
@@ -21,7 +21,7 @@ export default function Footer() {
             <span className="sr-only">LinkedIn</span>
           </Link>
           <Link
-            href="https://github.com/"
+            href="https://github.com/zt4ff"
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-foreground"
@@ -30,7 +30,7 @@ export default function Footer() {
             <span className="sr-only">GitHub</span>
           </Link>
           <Link
-            href="https://twitter.com/"
+            href="https://x.com/zt4ff"
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-foreground"
@@ -41,5 +41,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

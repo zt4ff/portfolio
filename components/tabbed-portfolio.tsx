@@ -1,55 +1,66 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { ExternalLink, Github, Calendar } from "lucide-react"
-import Link from "next/link"
+import { useState } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { ExternalLink, Github, Calendar } from "lucide-react";
+import Link from "next/link";
 
 export default function TabbedPortfolio() {
-  const [activeTab, setActiveTab] = useState("featured")
+  const [activeTab, setActiveTab] = useState("featured");
 
   const featuredProjects = [
     {
-      title: "E-Commerce Platform",
+      title: "QShop E-Commerce Web Application",
       description:
-        "A full-featured e-commerce platform with product management, cart functionality, payment processing, and order tracking.",
-      image: "/placeholder.svg?height=300&width=600",
-      tags: ["Next.js", "Node.js", "MongoDB", "Stripe", "Redux"],
-      liveUrl: "#",
-      githubUrl: "#",
+        "A full-featured e-commerce platform with product management, discount management, cart functionality, payment processing, automated deliveries, and order tracking.",
+      image: "/qshop.png",
+      tags: ["Nextjs", "Node", "MongoDB", "Stripe", "Nestjs"],
+      liveUrl: "https://app.qshop.tech/",
     },
     {
-      title: "Healthcare Management System",
+      title: "McMakler",
       description:
-        "A comprehensive healthcare management system for clinics to manage appointments, patient records, and billing.",
-      image: "/placeholder.svg?height=300&width=600",
+        "An online real estate brokake application for residential and commercial spaces",
+      image: "/mcmakler.png",
       tags: ["React", "Express", "PostgreSQL", "TypeScript", "Docker"],
-      liveUrl: "#",
-      githubUrl: "#",
+      liveUrl: "https://www.mcmakler.de/",
     },
     {
-      title: "Real-time Analytics Dashboard",
+      title: "QShop's Landing Page",
       description:
-        "A real-time analytics dashboard for monitoring business metrics, user engagement, and system performance.",
-      image: "/placeholder.svg?height=300&width=600",
-      tags: ["React", "WebSockets", "D3.js", "Node.js", "Redis"],
-      liveUrl: "#",
-      githubUrl: "#",
+        "A landing page of an ecommerce platform showcasing the features of the web application",
+      image: "/qshop-landing.png",
+      tags: ["Wordpress", "PHP", "Elementor"],
+      liveUrl: "https://qshop.tech/",
     },
-  ]
+    {
+      title: "Ekiti LMIS Landing Page",
+      description:
+        "The official landing page of Ekiti State's labour market information system",
+      image: "/ekiti-landing.png",
+      tags: ["Wordpress", "PHP", "Elementor"],
+      liveUrl: "https://eklmis.ek.gov.ng/",
+    },
+  ];
 
   const otherProjects = [
     {
-      title: "Fintech Mobile App",
+      title: "Touch Alias",
       description:
-        "A mobile application for financial management, including budgeting, expense tracking, and investment monitoring.",
-      image: "/placeholder.svg?height=300&width=600",
-      tags: ["React Native", "GraphQL", "AWS", "Firebase", "Redux"],
-      liveUrl: "#",
-      githubUrl: "#",
+        "A CLI tool to create files quickly and automatically create the path if the directories do not exist.",
+      tags: ["npm", "Ndode", "Bash"],
+      liveUrl: "https://www.npmjs.com/package/touch-alias",
+      githubUrl: "https://github.com/zt4ff/touch-alias",
     },
     {
       title: "Content Management System",
@@ -71,7 +82,8 @@ export default function TabbedPortfolio() {
     },
     {
       title: "React Component Library",
-      description: "A collection of reusable React components with TypeScript support and comprehensive documentation.",
+      description:
+        "A collection of reusable React components with TypeScript support and comprehensive documentation.",
       image: "/placeholder.svg?height=300&width=600",
       tags: ["React", "TypeScript", "Storybook"],
       liveUrl: "#",
@@ -79,7 +91,8 @@ export default function TabbedPortfolio() {
     },
     {
       title: "Node.js API Framework",
-      description: "A lightweight framework for building scalable and maintainable REST APIs with Node.js.",
+      description:
+        "A lightweight framework for building scalable and maintainable REST APIs with Node.js.",
       image: "/placeholder.svg?height=300&width=600",
       tags: ["Node.js", "Express", "TypeScript"],
       liveUrl: "#",
@@ -87,13 +100,14 @@ export default function TabbedPortfolio() {
     },
     {
       title: "Database Migration Tool",
-      description: "A CLI tool for managing database migrations across different environments and database systems.",
+      description:
+        "A CLI tool for managing database migrations across different environments and database systems.",
       image: "/placeholder.svg?height=300&width=600",
       tags: ["CLI", "Node.js", "SQL"],
       liveUrl: "#",
       githubUrl: "#",
     },
-  ]
+  ];
 
   const articles = [
     {
@@ -141,15 +155,19 @@ export default function TabbedPortfolio() {
       tags: ["Database", "Design Patterns", "Architecture"],
       url: "#",
     },
-  ]
+  ];
 
   return (
     <section id="projects" className="py-16 md:py-24 bg-muted/50">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
-            <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">Portfolio</div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">My Work</h2>
+            <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">
+              Portfolio
+            </div>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+              My Work
+            </h2>
             <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               Explore my featured projects, other work, and technical articles.
             </p>
@@ -157,7 +175,11 @@ export default function TabbedPortfolio() {
         </div>
 
         <div className="mx-auto max-w-5xl mt-12">
-          <Tabs defaultValue="featured" className="w-full" onValueChange={setActiveTab}>
+          <Tabs
+            defaultValue="featured"
+            className="w-full"
+            onValueChange={setActiveTab}
+          >
             <div className="flex justify-center mb-8">
               <TabsList className="grid w-full max-w-md grid-cols-3">
                 <TabsTrigger value="featured">Featured Work</TabsTrigger>
@@ -191,12 +213,14 @@ export default function TabbedPortfolio() {
                       </div>
                     </CardContent>
                     <CardFooter className="flex justify-between">
-                      <Button variant="outline" size="sm" asChild>
-                        <Link href={project.githubUrl}>
-                          <Github className="mr-2 h-4 w-4" />
-                          Code
-                        </Link>
-                      </Button>
+                      {project.githubUrl && (
+                        <Button variant="outline" size="sm" asChild>
+                          <Link href={project.githubUrl}>
+                            <Github className="mr-2 h-4 w-4" />
+                            Code
+                          </Link>
+                        </Button>
+                      )}
                       <Button size="sm" asChild>
                         <Link href={project.liveUrl}>
                           <ExternalLink className="mr-2 h-4 w-4" />
@@ -287,5 +311,5 @@ export default function TabbedPortfolio() {
         </div>
       </div>
     </section>
-  )
+  );
 }
