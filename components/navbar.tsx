@@ -1,41 +1,45 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import { Menu, X } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { ModeToggle } from "./mode-toggle"
-import { useMobile } from "@/hooks/use-mobile"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ModeToggle } from "./mode-toggle";
+import { useMobile } from "@/hooks/use-mobile";
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
-  const isMobile = useMobile()
+  const [isOpen, setIsOpen] = useState(false);
+  const isMobile = useMobile();
 
   // Close menu when switching from mobile to desktop
   useEffect(() => {
     if (!isMobile) {
-      setIsOpen(false)
+      setIsOpen(false);
     }
-  }, [isMobile])
+  }, [isMobile]);
 
   const navItems = [
     { name: "About", href: "#about" },
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },
-  ]
+  ];
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="font-bold text-xl">
-          Kayode<span className="text-primary">.dev</span>
+          Kayode Oluwasegun
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6">
           {navItems.map((item) => (
-            <Link key={item.name} href={item.href} className="text-sm font-medium transition-colors hover:text-primary">
+            <Link
+              key={item.name}
+              href={item.href}
+              className="text-sm font-medium transition-colors hover:text-primary"
+            >
               {item.name}
             </Link>
           ))}
@@ -84,5 +88,5 @@ export default function Navbar() {
         </div>
       )}
     </header>
-  )
+  );
 }

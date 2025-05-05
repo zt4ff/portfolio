@@ -10,7 +10,6 @@ export const metadata = {
   title: "Kayode Oluwasegun | Fullstack Engineer",
   description:
     "Professional portfolio of Kayode Oluwasegun, a fullstack engineer with over 6 years of experience across multiple industries.",
-  generator: "v0.dev",
 };
 
 export default function RootLayout({
