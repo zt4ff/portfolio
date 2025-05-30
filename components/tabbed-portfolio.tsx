@@ -20,17 +20,25 @@ export default function TabbedPortfolio() {
 
   const featuredProjects = [
     {
-      title: "QShop E-Commerce Web Application",
+      title: "QShop E-Commerce Adminstration Dashboard",
       description:
-        "A full-featured e-commerce platform with product management, discount management, cart functionality, payment processing, automated deliveries, and order tracking.",
+        "A full-featured e-commerce administration with product management, discount management, cart functionality, payment processing, automated deliveries and order tracking, etc.",
       image: "/qshop.png",
       tags: ["Nextjs", "Node", "MongoDB", "Stripe", "Nestjs"],
       liveUrl: "https://app.qshop.tech/",
     },
     {
+      title: "QShop E-Commerce Storefront",
+      description:
+        "A storefront interface for e-commerce stores managed on the Qshop Adminstration Dashboard.",
+      image: "/storefront.png",
+      tags: ["Nextjs", "Node", "MongoDB", "Stripe", "Nestjs"],
+      liveUrl: "https://sample-109954.qshop.ng/",
+    },
+    {
       title: "McMakler",
       description:
-        "An online real estate brokake application for residential and commercial spaces",
+        "An online real estate brokage application for residential and commercial spaces in Germany",
       image: "/mcmakler.png",
       tags: ["React", "Express", "PostgreSQL", "TypeScript", "Docker"],
       liveUrl: "https://www.mcmakler.de/",
@@ -51,6 +59,22 @@ export default function TabbedPortfolio() {
       tags: ["Wordpress", "PHP", "Elementor"],
       liveUrl: "https://eklmis.ek.gov.ng/",
     },
+    {
+      title: "Ekiti LMIS Job Seekers Application",
+      description:
+        "The Ekiti State's labour market information system interface for job seekers",
+      image: "/job-seeker.png",
+      tags: ["NestJS", "NextJS", "Typescript"],
+      liveUrl: "https://jobseekers.eklmis.ek.gov.ng/",
+    },
+    {
+      title: "Ekiti LMIS Employers Application",
+      description:
+        "The Ekiti State's labour market information system interface for employers",
+      image: "/employers.png",
+      tags: ["NestJS", "NextJS", "Typescript"],
+      liveUrl: "https://employers.eklmis.ek.gov.ng/",
+    },
   ];
 
   const otherProjects = [
@@ -62,98 +86,16 @@ export default function TabbedPortfolio() {
       liveUrl: "https://www.npmjs.com/package/touch-alias",
       githubUrl: "https://github.com/zt4ff/touch-alias",
     },
-    {
-      title: "Content Management System",
-      description:
-        "A custom CMS for managing digital content, supporting multiple content types, user roles, and publishing workflows.",
-      image: "/placeholder.svg?height=300&width=600",
-      tags: ["Next.js", "Prisma", "PostgreSQL", "AWS S3", "Tailwind CSS"],
-      liveUrl: "#",
-      githubUrl: "#",
-    },
-    {
-      title: "Supply Chain Management Platform",
-      description:
-        "A platform for tracking and managing supply chain operations, inventory, and logistics across multiple locations.",
-      image: "/placeholder.svg?height=300&width=600",
-      tags: ["React", "Node.js", "MongoDB", "Docker", "Kubernetes"],
-      liveUrl: "#",
-      githubUrl: "#",
-    },
-    {
-      title: "React Component Library",
-      description:
-        "A collection of reusable React components with TypeScript support and comprehensive documentation.",
-      image: "/placeholder.svg?height=300&width=600",
-      tags: ["React", "TypeScript", "Storybook"],
-      liveUrl: "#",
-      githubUrl: "#",
-    },
-    {
-      title: "Node.js API Framework",
-      description:
-        "A lightweight framework for building scalable and maintainable REST APIs with Node.js.",
-      image: "/placeholder.svg?height=300&width=600",
-      tags: ["Node.js", "Express", "TypeScript"],
-      liveUrl: "#",
-      githubUrl: "#",
-    },
-    {
-      title: "Database Migration Tool",
-      description:
-        "A CLI tool for managing database migrations across different environments and database systems.",
-      image: "/placeholder.svg?height=300&width=600",
-      tags: ["CLI", "Node.js", "SQL"],
-      liveUrl: "#",
-      githubUrl: "#",
-    },
   ];
 
   const articles = [
     {
-      title: "Building Scalable Microservices with Node.js",
+      title: "A Complete Guide on how to run Mocha npm Testing with Node.js",
       description:
-        "A comprehensive guide to designing and implementing microservices architecture using Node.js and Docker.",
-      date: "March 15, 2023",
-      readTime: "12 min read",
-      tags: ["Microservices", "Node.js", "Docker", "Architecture"],
-      url: "#",
-    },
-    {
-      title: "React Performance Optimization Techniques",
-      description:
-        "Learn how to identify and fix performance bottlenecks in React applications using profiling tools and best practices.",
-      date: "January 22, 2023",
-      readTime: "8 min read",
-      tags: ["React", "Performance", "JavaScript", "Optimization"],
-      url: "#",
-    },
-    {
-      title: "The Future of Web Development: What to Expect in 2023",
-      description:
-        "An analysis of emerging trends and technologies that will shape the future of web development in the coming year.",
-      date: "December 10, 2022",
-      readTime: "10 min read",
-      tags: ["Web Development", "Trends", "Future Tech"],
-      url: "#",
-    },
-    {
-      title: "Implementing Authentication with NextAuth.js",
-      description:
-        "A step-by-step tutorial on implementing secure authentication in Next.js applications using NextAuth.js.",
-      date: "October 5, 2022",
-      readTime: "15 min read",
-      tags: ["Next.js", "Authentication", "Security", "Tutorial"],
-      url: "#",
-    },
-    {
-      title: "Database Design Patterns for Modern Applications",
-      description:
-        "Explore effective database design patterns and strategies for building scalable and maintainable applications.",
-      date: "August 18, 2022",
-      readTime: "11 min read",
-      tags: ["Database", "Design Patterns", "Architecture"],
-      url: "#",
+        "In this Mocha NodeJS tutorial, you will get in-depth insights on how to write assertions using the NodeJS assert module while performing Selenium automation testing with Mocha framework",
+      date: "January 16, 2023",
+      tags: ["Testing", "Quality Assurance", "Mocha", "npm"],
+      url: "https://www.lambdatest.com/blog/mocha-nodejs-tutorial/",
     },
   ];
 
@@ -293,7 +235,7 @@ export default function TabbedPortfolio() {
                     </div>
                     <div className="flex items-center text-sm text-muted-foreground">
                       <Calendar className="mr-2 h-4 w-4" />
-                      {article.date} • {article.readTime}
+                      {article.date}
                     </div>
                   </CardContent>
                   <CardFooter>

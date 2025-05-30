@@ -20,7 +20,7 @@ export default function About() {
             </p>
           </div>
         </div>
-        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-3 lg:gap-12 mt-12">
+        {/* <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-3 lg:gap-12 mt-12">
           <Card>
             <CardContent className="p-6 flex flex-col items-center text-center space-y-4">
               <div className="rounded-full bg-primary/10 p-4">
@@ -57,8 +57,8 @@ export default function About() {
               </p>
             </CardContent>
           </Card>
-        </div>
-        <div className="mt-16 space-y-6 md:space-y-8">
+        </div> */}
+        <div className="mt-20 space-y-6 md:space-y-8">
           <h3 className="text-2xl font-bold text-center">
             Professional Journey
           </h3>
@@ -99,17 +99,6 @@ export default function About() {
               <p className="text-muted-foreground">
                 Built responsive user interfaces and implemented complex UI/UX
                 designs for web applications.
-              </p>
-            </div>
-            <div className="space-y-4">
-              <div className="inline-flex items-center gap-2 rounded-lg bg-muted px-3 py-1 text-sm">
-                <GraduationCap className="h-4 w-4" />
-                <span>Education</span>
-              </div>
-              <h4 className="text-xl font-bold">Accounting</h4>
-              <p className="text-muted-foreground">
-                Bachelor's degree in accounting with focus in accounting
-                information technology.
               </p>
             </div>
           </div>

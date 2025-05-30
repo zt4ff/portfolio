@@ -14,7 +14,16 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  Linkedin,
+  Twitter,
+  Github,
+} from "lucide-react";
+import Link from "next/link";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -41,7 +50,7 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
+    // TODO - submit form
     await new Promise((resolve) => setTimeout(resolve, 1500));
 
     setIsSubmitting(false);
@@ -76,8 +85,8 @@ export default function Contact() {
             </p>
           </div>
         </div>
-        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2 mt-12">
-          <Card>
+        <div className="mx-auto max-w-5xl mt-12">
+          <Card className="py-8 px-4">
             <CardHeader>
               <CardTitle>Contact Information</CardTitle>
               <CardDescription>
@@ -91,11 +100,68 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-medium">Email</h3>
-                  <p className="text-muted-foreground">
+                  <Link
+                    href="mailto:segunkayode00@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
                     segunkayode00@gmail.com
-                  </p>
+                  </Link>
                 </div>
               </div>
+
+              <div className="flex items-start gap-4">
+                <div className="rounded-full bg-primary/10 p-2">
+                  <Linkedin className="h-5 w-5 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-medium">LinkedIn</h3>
+                  <Link
+                    href="https://www.linkedin.com/in/oluwasegun-kayode/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    oluwasegun-kayode
+                  </Link>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="rounded-full bg-primary/10 p-2">
+                  <Twitter className="h-5 w-5 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-medium">Twitter</h3>
+                  <Link
+                    href="https://x.com/zt4ff"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    zt4ff
+                  </Link>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="rounded-full bg-primary/10 p-2">
+                  <Github className="h-5 w-5 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-medium">GitHub</h3>
+                  <Link
+                    href="https://github.com/zt4ff"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    zt4ff
+                  </Link>
+                </div>
+              </div>
+
               <div className="flex items-start gap-4">
                 <div className="rounded-full bg-primary/10 p-2">
                   <MapPin className="h-5 w-5 text-primary" />
@@ -107,7 +173,7 @@ export default function Contact() {
               </div>
             </CardContent>
           </Card>
-          <Card>
+          {/* <Card>
             <CardHeader>
               <CardTitle>Send a Message</CardTitle>
               <CardDescription>
@@ -187,7 +253,7 @@ export default function Contact() {
                 )}
               </form>
             </CardContent>
-          </Card>
+          </Card> */}
         </div>
       </div>
     </section>
