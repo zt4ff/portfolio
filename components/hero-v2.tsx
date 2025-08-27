@@ -6,21 +6,25 @@ import { Github, Linkedin, Mail, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
 export default function Hero() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
   useEffect(() => {
-    const updateMousePosition = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
+    const root = document.documentElement;
+    let raf = 0;
 
-      // Update the mouse follower
-      const mouseFollower = document.getElementById("mouse-follower");
-      if (mouseFollower) {
-        mouseFollower.style.background = `radial-gradient(600px at ${e.clientX}px ${e.clientY}px, rgba(29, 78, 216, 0.15), transparent 80%)`;
-      }
+    const onMove = (e: MouseEvent) => {
+      const x = e.clientX;
+      const y = e.clientY;
+      if (raf) cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        root.style.setProperty("--mouse-x", `${x}px`);
+        root.style.setProperty("--mouse-y", `${y}px`);
+      });
     };
 
-    window.addEventListener("mousemove", updateMousePosition);
-    return () => window.removeEventListener("mousemove", updateMousePosition);
+    window.addEventListener("pointermove", onMove, { passive: true });
+    return () => {
+      window.removeEventListener("pointermove", onMove);
+      if (raf) cancelAnimationFrame(raf);
+    };
   }, []);
 
   return (
@@ -32,7 +36,7 @@ export default function Hero() {
           transition={{ duration: 0.5 }}
           className="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl"
         >
-          <Link href="/">Kayode Adeniyi</Link>
+          <Link href="/">Kayode Oluwasegun</Link>
         </motion.h1>
 
         <motion.h2
@@ -66,6 +70,7 @@ export default function Hero() {
               { href: "#experience", label: "Experience" },
               { href: "#projects", label: "Projects" },
               { href: "#contact", label: "Contact" },
+              { href: "/kayode-oluwasegun-cv.pdf", label: "View Full Résumé" },
             ].map((item, index) => (
               <li key={item.href}>
                 <motion.a
@@ -96,11 +101,15 @@ export default function Hero() {
         {[
           { href: "https://github.com/zt4ff", icon: Github, label: "GitHub" },
           {
-            href: "https://linkedin.com/in/adeniyi-kayode",
+            href: "https://www.linkedin.com/in/oluwasegun-kayode/",
             icon: Linkedin,
             label: "LinkedIn",
           },
-          { href: "mailto:abisolacode@gmail.com", icon: Mail, label: "Email" },
+          {
+            href: "mailto:segunkayode00@gmail.com",
+            icon: Mail,
+            label: "Email",
+          },
         ].map((social, index) => (
           <li key={social.href} className="mr-5 text-xs shrink-0">
             <motion.a
@@ -119,15 +128,6 @@ export default function Hero() {
           </li>
         ))}
       </motion.ul>
-
-      {/* Mouse follower */}
-      <div
-        id="mouse-follower"
-        className="pointer-events-none fixed inset-0 z-30 transition duration-300 lg:absolute"
-        style={{
-          background: `radial-gradient(600px at ${mousePosition.x}px ${mousePosition.y}px, rgba(29, 78, 216, 0.15), transparent 80%)`,
-        }}
-      ></div>
     </header>
   );
 }

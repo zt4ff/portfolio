@@ -130,8 +130,9 @@ export default function Experience() {
         >
           <a
             className="inline-flex items-center font-medium leading-tight text-slate-200 group"
-            aria-label="View Full Résumé (opens in a new tab)"
-            href="/resume.pdf"
+            aria-label="View Full Résumé"
+            href="/kayode-oluwasegun-cv.pdf"
+            download
             target="_blank"
             rel="noreferrer noopener"
           >

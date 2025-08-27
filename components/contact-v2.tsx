@@ -54,49 +54,13 @@ export default function Contact() {
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           <a
-            href="mailto:abisolacode@gmail.com"
+            href="mailto:segunkayode00@gmail.com"
             className="inline-flex items-center px-6 py-3 text-sm font-medium text-teal-300 border border-teal-300 rounded-lg hover:bg-teal-300/10 transition-colors duration-200 group"
           >
             Say Hello
             <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
           </a>
         </motion.div>
-
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-16 text-center text-sm text-slate-500"
-        >
-          Built with{" "}
-          <a
-            href="https://nextjs.org/"
-            target="_blank"
-            rel="noreferrer noopener"
-            className="text-slate-400 hover:text-teal-300 transition-colors"
-          >
-            Next.js
-          </a>{" "}
-          and{" "}
-          <a
-            href="https://tailwindcss.com/"
-            target="_blank"
-            rel="noreferrer noopener"
-            className="text-slate-400 hover:text-teal-300 transition-colors"
-          >
-            Tailwind CSS
-          </a>
-          . Deployed with{" "}
-          <a
-            href="https://vercel.com/"
-            target="_blank"
-            rel="noreferrer noopener"
-            className="text-slate-400 hover:text-teal-300 transition-colors"
-          >
-            Vercel
-          </a>
-          .
-        </motion.p>
       </motion.div>
     </section>
   );

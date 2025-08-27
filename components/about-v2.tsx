@@ -8,18 +8,11 @@ export default function About() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const skills = [
-    "JavaScript (ES6+)",
-    "TypeScript",
-    "React",
-    "Next.js",
-    "Node.js",
-    "NestJS",
-    "Python",
-    "PostgreSQL",
-    "MongoDB",
-    "AWS",
-    "Docker",
-    "REST APIs",
+    "Frontend Development (Javascript, Typescript, React, Vue, HTML/CSS...)",
+    "Backend Development (Python, NodeJS, Nextjs, Express...)",
+    "Database (MongoDB, PostgreSQL, MYSQL, Prisma)",
+    "DevOps & Cloud Computing (AWS, GCP)",
+    "System Architecture",
   ];
 
   return (
@@ -41,7 +34,7 @@ export default function About() {
         transition={{ duration: 0.6 }}
       >
         <div className="space-y-4">
-          <p>
+          {/* <p>
             Back in 2018, I decided to try my hand at creating custom websites
             and tumbled head first into the rabbit hole of coding and web
             development. Fast-forward to today, and I've had the privilege of
@@ -66,7 +59,7 @@ export default function About() {
               large corporation
             </a>
             , and government agencies.
-          </p>
+          </p> */}
 
           <p>
             My main focus these days is building accessible, inclusive products

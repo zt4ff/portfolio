@@ -12,37 +12,66 @@ export default function FeaturedProjects() {
 
   const projects = [
     {
-      title: "QShop E-Commerce Platform",
+      title: "QShop E-Commerce Adminstration Dashboard",
       description:
-        "A full-featured e-commerce administration platform with product management, discount management, cart functionality, payment processing, automated deliveries and order tracking. Built with modern technologies and scalable architecture.",
+        "A full-featured e-commerce administration with product management, discount management, cart functionality, payment processing, automated deliveries and order tracking, etc.",
       image: "/qshop.png",
-      technologies: [
-        "Next.js",
-        "NestJS",
-        "MongoDB",
-        "Stripe",
-        "AWS",
-        "TypeScript",
-      ],
+      technologies: ["Nextjs", "Node", "MongoDB", "Stripe", "Nestjs"],
       liveUrl: "https://app.qshop.tech/",
       githubUrl: null,
     },
     {
-      title: "McMakler Real Estate Platform",
+      title: "QShop E-Commerce Storefront",
       description:
-        "An online real estate brokerage application for residential and commercial spaces in Germany. Streamlined property search and management system with advanced filtering and user experience.",
+        "A storefront interface for e-commerce stores managed on the Qshop Adminstration Dashboard.",
+      image: "/storefront.png",
+      technologies: ["Nextjs", "Node", "MongoDB", "Stripe", "Nestjs"],
+      liveUrl: "https://sample-109954.qshop.ng/",
+      githubUrl: null,
+    },
+    {
+      title: "McMakler",
+      description:
+        "An online real estate brokage application for residential and commercial spaces in Germany",
       image: "/mcmakler.png",
       technologies: ["React", "Express", "PostgreSQL", "TypeScript", "Docker"],
       liveUrl: "https://www.mcmakler.de/",
       githubUrl: null,
     },
     {
-      title: "Ekiti LMIS",
+      title: "QShop's Landing Page",
       description:
-        "The official Labour Market Information System for Ekiti State, connecting job seekers with employers and providing valuable market insights through comprehensive data analysis.",
+        "A landing page of an ecommerce platform showcasing the features of the web application",
+      image: "/qshop-landing.png",
+      technologies: ["Wordpress", "PHP", "Elementor"],
+      liveUrl: "https://qshop.tech/",
+      githubUrl: null,
+    },
+    {
+      title: "Ekiti LMIS Landing Page",
+      description:
+        "The official landing page of Ekiti State's labour market information system",
       image: "/ekiti-landing.png",
-      technologies: ["Next.js", "NestJS", "PostgreSQL", "WordPress", "PHP"],
+      technologies: ["Wordpress", "PHP", "Elementor"],
       liveUrl: "https://eklmis.ek.gov.ng/",
+      githubUrl: null,
+    },
+    {
+      title: "Ekiti LMIS Job Seekers Application",
+      description:
+        "The Ekiti State's labour market information system interface for job seekers",
+      image: "/job-seeker.png",
+      technologies: ["NestJS", "NextJS", "Typescript"],
+      liveUrl: "https://jobseekers.eklmis.ek.gov.ng/",
+      githubUrl: null,
+    },
+    {
+      title: "Ekiti LMIS Employers Application",
+      description:
+        "The Ekiti State's labour market information system interface for employers",
+      image: "/employers.png",
+      technologies: ["NestJS", "NextJS", "Typescript"],
+      liveUrl: "https://employers.eklmis.ek.gov.ng/",
       githubUrl: null,
     },
   ];
@@ -95,7 +124,7 @@ export default function FeaturedProjects() {
                     {project.description}
                   </p>
 
-                  {project.githubUrl && (
+                  {project?.githubUrl && (
                     <a
                       className="relative mt-2 inline-flex items-center text-sm font-medium text-slate-300 hover:text-teal-300 focus-visible:text-teal-300"
                       href={project.githubUrl}

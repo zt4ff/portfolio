@@ -19,22 +19,14 @@ export default function OtherProjects() {
       githubUrl: "https://github.com/zt4ff/touch-alias",
       liveUrl: "https://www.npmjs.com/package/touch-alias",
     },
-    {
-      title: "QShop Storefront",
-      description:
-        "A storefront interface for e-commerce stores managed on the QShop Administration Dashboard. Features responsive design and seamless integration.",
-      technologies: ["Next.js", "NestJS", "MongoDB", "Stripe"],
-      githubUrl: null,
-      liveUrl: "https://sample-109954.qshop.ng/",
-    },
-    {
-      title: "Portfolio Website",
-      description:
-        "A personal portfolio website built with Next.js and Framer Motion. Features interactive animations and responsive design.",
-      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-      githubUrl: "https://github.com/zt4ff/portfolio",
-      liveUrl: "#",
-    },
+    // {
+    //   title: "Portfolio Website",
+    //   description:
+    //     "A personal portfolio website built with Next.js and Framer Motion. Features interactive animations and responsive design.",
+    //   technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    //   githubUrl: "https://github.com/zt4ff/portfolio",
+    //   liveUrl: "#",
+    // },
   ];
 
   const visibleProjects = showMore ? projects : projects.slice(0, 6);

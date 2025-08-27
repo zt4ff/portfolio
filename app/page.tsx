@@ -13,10 +13,16 @@ export default function Home() {
       <ScrollProgress />
       <Navigation />
 
-      {/* Mouse follower - moved to top level */}
+      {/* Single global mouse follower */}
       <div
-        className="pointer-events-none fixed inset-0 z-30 transition duration-300 opacity-0 lg:opacity-100"
         id="mouse-follower"
+        className="pointer-events-none fixed inset-0 z-30 transition duration-300 opacity-0 lg:opacity-100"
+        style={{
+          // Uses CSS variables set by the Hero effect
+          background:
+            "radial-gradient(600px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(29, 78, 216, 0.15), transparent 80%)",
+          willChange: "background",
+        }}
       ></div>
 
       <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0">
