@@ -1,109 +1,107 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Briefcase, GraduationCap, Award } from "lucide-react";
+"use client";
+
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 export default function About() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  const skills = [
+    "Frontend Development (Javascript, Typescript, React, Vue, HTML/CSS...)",
+    "Backend Development (Python, NodeJS, Nextjs, Express...)",
+    "Database (MongoDB, PostgreSQL, MYSQL, Prisma)",
+    "DevOps & Cloud Computing (AWS, GCP)",
+    "System Architecture",
+  ];
+
   return (
-    <section id="about" className="py-16 md:py-24 bg-muted/50">
-      <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <div className="space-y-2">
-            <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">
-              About Me
-            </div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-              Who I Am
-            </h2>
-            <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              I'm a passionate fullstack engineer with over 6 years of
-              experience working across multiple industries. I specialize in
-              building scalable web applications.
-            </p>
-          </div>
-        </div>
-        {/* <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-3 lg:gap-12 mt-12">
-          <Card>
-            <CardContent className="p-6 flex flex-col items-center text-center space-y-4">
-              <div className="rounded-full bg-primary/10 p-4">
-                <Briefcase className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="text-xl font-bold">Experience</h3>
-              <p className="text-muted-foreground">
-                6+ years of professional experience working with startups,
-                enterprises, and everything in between.
-              </p>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardContent className="p-6 flex flex-col items-center text-center space-y-4">
-              <div className="rounded-full bg-primary/10 p-4">
-                <GraduationCap className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="text-xl font-bold">Education</h3>
-              <p className="text-muted-foreground">
-                Computer Science degree with continuous learning through
-                professional development and certifications.
-              </p>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardContent className="p-6 flex flex-col items-center text-center space-y-4">
-              <div className="rounded-full bg-primary/10 p-4">
-                <Award className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="text-xl font-bold">Open Source</h3>
-              <p className="text-muted-foreground">
-                Active contributor to open source projects, creating tools and
-                libraries used by developers worldwide.
-              </p>
-            </CardContent>
-          </Card>
-        </div> */}
-        <div className="mt-20 space-y-6 md:space-y-8">
-          <h3 className="text-2xl font-bold text-center">
-            Professional Journey
-          </h3>
-          <div className="grid gap-6 md:grid-cols-2 lg:gap-12">
-            <div className="space-y-4">
-              <div className="inline-flex items-center gap-2 rounded-lg bg-muted px-3 py-1 text-sm">
-                <Briefcase className="h-4 w-4" />
-                <span>Jan 2022 - Present</span>
-              </div>
-              <h4 className="text-xl font-bold">Fullstack Engineer, Qshop</h4>
-              <p className="text-muted-foreground">
-                Leading development of enterprise applications, mentoring junior
-                developers, and implementing best practices for scalable
-                architecture.
-              </p>
-            </div>
-            <div className="space-y-4">
-              <div className="inline-flex items-center gap-2 rounded-lg bg-muted px-3 py-1 text-sm">
-                <Briefcase className="h-4 w-4" />
-                <span>July 2021 - Oct 2022</span>
-              </div>
-              <h4 className="text-xl font-bold">
-                Frontend Developer, Garmatsch Software, Berlin
-              </h4>
-              <p className="text-muted-foreground">
-                Developed and maintained web applications for clients across
-                fintech, healthcare, and e-commerce sectors.
-              </p>
-            </div>
-            <div className="space-y-4">
-              <div className="inline-flex items-center gap-2 rounded-lg bg-muted px-3 py-1 text-sm">
-                <Briefcase className="h-4 w-4" />
-                <span>July 2021 - Oct 2022</span>
-              </div>
-              <h4 className="text-xl font-bold">
-                Frontend Developer, Coder Consulting, Berlin
-              </h4>
-              <p className="text-muted-foreground">
-                Built responsive user interfaces and implemented complex UI/UX
-                designs for web applications.
-              </p>
-            </div>
-          </div>
-        </div>
+    <section
+      id="about"
+      className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
+      aria-label="About me"
+    >
+      <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+        <h2 className="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">
+          About
+        </h2>
       </div>
+
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, y: 50 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="space-y-4">
+          {/* <p>
+            Back in 2018, I decided to try my hand at creating custom websites
+            and tumbled head first into the rabbit hole of coding and web
+            development. Fast-forward to today, and I've had the privilege of
+            building software for a{" "}
+            <a
+              className="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300"
+              href="https://qshop.tech"
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label="QShop (opens in a new tab)"
+            >
+              start-up
+            </a>
+            , a{" "}
+            <a
+              className="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300"
+              href="https://mcmakler.de"
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label="McMakler (opens in a new tab)"
+            >
+              large corporation
+            </a>
+            , and government agencies.
+          </p> */}
+
+          <p>
+            My main focus these days is building accessible, inclusive products
+            and digital experiences for a variety of clients. I most enjoy
+            working on projects that challenge me to learn something new and
+            push me to grow as a developer.
+          </p>
+
+          <p>
+            When I'm not at the computer, I'm usually reading tech blogs,
+            exploring new technologies, or learning about system design and
+            architecture patterns.
+          </p>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-8"
+        >
+          <p className="mb-4 text-sm font-medium text-slate-200">
+            Here are a few technologies I've been working with recently:
+          </p>
+          <ul className="grid grid-cols-2 gap-2 text-sm">
+            {skills.map((skill, index) => (
+              <motion.li
+                key={skill}
+                initial={{ opacity: 0, x: -20 }}
+                animate={
+                  isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }
+                }
+                transition={{ duration: 0.4, delay: 0.3 + index * 0.05 }}
+                className="flex items-center"
+              >
+                <span className="mr-2 text-teal-300">▹</span>
+                {skill}
+              </motion.li>
+            ))}
+          </ul>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

@@ -1,9 +1,9 @@
-import Hero from "@/components/hero-v2";
-import About from "@/components/about-v2";
+import Hero from "@/components/hero";
+import About from "@/components/about";
 import Experience from "@/components/experience";
 import FeaturedProjects from "@/components/featured-projects";
 import OtherProjects from "@/components/other-projects";
-import Contact from "@/components/contact-v2";
+import Contact from "@/components/contact";
 import Navigation from "@/components/navigation";
 import ScrollProgress from "@/components/scroll-progress";
 

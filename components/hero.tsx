@@ -1,84 +1,133 @@
-import { ArrowRight, Github, Linkedin, Twitter } from "lucide-react";
+"use client";
+
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Github, Linkedin, Mail, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 
 export default function Hero() {
+  useEffect(() => {
+    const root = document.documentElement;
+    let raf = 0;
+
+    const onMove = (e: MouseEvent) => {
+      const x = e.clientX;
+      const y = e.clientY;
+      if (raf) cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        root.style.setProperty("--mouse-x", `${x}px`);
+        root.style.setProperty("--mouse-y", `${y}px`);
+      });
+    };
+
+    window.addEventListener("pointermove", onMove, { passive: true });
+    return () => {
+      window.removeEventListener("pointermove", onMove);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, []);
+
   return (
-    <section className="relative py-20 md:py-32 overflow-hidden">
-      <div className="container px-4 md:px-6">
-        <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
-          <div className="flex flex-col justify-center space-y-4">
-            <div className="space-y-2">
-              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                Kayode Oluwasegun
-              </h1>
-              <p className="text-xl text-muted-foreground">
-                Fullstack Engineer with 6+ years of experience
-              </p>
-            </div>
-            <p className="max-w-[600px] text-muted-foreground md:text-xl">
-              Building innovative solutions across multiple industries.
-              Passionate about open source and creating impactful applications.
-            </p>
-            <div className="flex flex-col gap-2 min-[400px]:flex-row">
-              <Button asChild>
-                <Link href="#projects">
-                  View My Work
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button variant="outline" asChild>
-                <a href="/kayode-oluwasegun-cv.pdf" download>
-                  Download my CV
-                </a>
-              </Button>
-            </div>
-            <div className="flex gap-4 mt-4">
-              <Button variant="ghost" size="icon" asChild>
-                <Link
-                  href="https://www.linkedin.com/in/oluwasegun-kayode/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+    <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
+      <div>
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl"
+        >
+          <Link href="/">Kayode Oluwasegun</Link>
+        </motion.h1>
+
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl"
+        >
+          Senior Full-Stack Engineer
+        </motion.h2>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mt-4 max-w-xs leading-normal"
+        >
+          I build exceptional and accessible digital experiences for the web.
+        </motion.p>
+
+        <motion.nav
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="nav hidden lg:block"
+          aria-label="In-page jump links"
+        >
+          <ul className="mt-16 w-max">
+            {[
+              { href: "#about", label: "About" },
+              { href: "#experience", label: "Experience" },
+              { href: "#projects", label: "Projects" },
+              { href: "#contact", label: "Contact" },
+              { href: "/kayode-oluwasegun-cv.pdf", label: "View Full Résumé" },
+            ].map((item, index) => (
+              <li key={item.href}>
+                <motion.a
+                  href={item.href}
+                  className="group flex items-center py-3"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
                 >
-                  <Linkedin className="h-5 w-5" />
-                  <span className="sr-only">LinkedIn</span>
-                </Link>
-              </Button>
-              <Button variant="ghost" size="icon" asChild>
-                <Link
-                  href="https://github.com/zt4ff"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Github className="h-5 w-5" />
-                  <span className="sr-only">GitHub</span>
-                </Link>
-              </Button>
-              <Button variant="ghost" size="icon" asChild>
-                <Link
-                  href="https://x.com/zt4ff"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Twitter className="h-5 w-5" />
-                  <span className="sr-only">Twitter</span>
-                </Link>
-              </Button>
-            </div>
-          </div>
-          <div className="flex items-center justify-center">
-            <div className="relative aspect-square overflow-hidden rounded-full border-8 border-muted w-[280px] h-[280px] md:w-[400px] md:h-[400px]">
-              <img
-                src="/kayode.jpg"
-                alt="Kayode Oluwasegun"
-                className="object-cover"
-                width={400}
-                height={400}
-              />
-            </div>
-          </div>
-        </div>
+                  <span className="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span>
+                  <span className="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200">
+                    {item.label}
+                  </span>
+                </motion.a>
+              </li>
+            ))}
+          </ul>
+        </motion.nav>
       </div>
-    </section>
+
+      <motion.ul
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.8 }}
+        className="ml-1 mt-8 flex items-center"
+        aria-label="Social media"
+      >
+        {[
+          { href: "https://github.com/zt4ff", icon: Github, label: "GitHub" },
+          {
+            href: "https://www.linkedin.com/in/oluwasegun-kayode/",
+            icon: Linkedin,
+            label: "LinkedIn",
+          },
+          {
+            href: "mailto:segunkayode00@gmail.com",
+            icon: Mail,
+            label: "Email",
+          },
+        ].map((social, index) => (
+          <li key={social.href} className="mr-5 text-xs shrink-0">
+            <motion.a
+              className="block hover:text-slate-200"
+              href={social.href}
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label={social.label}
+              title={social.label}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <span className="sr-only">{social.label}</span>
+              <social.icon className="h-6 w-6" />
+            </motion.a>
+          </li>
+        ))}
+      </motion.ul>
+    </header>
   );
 }
