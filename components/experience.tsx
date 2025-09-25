@@ -11,38 +11,63 @@ export default function Experience() {
 
   const experiences = [
     {
-      period: "2022 — PRESENT",
-      title: "Senior Full-Stack Engineer",
-      company: "QShop",
+      period: "AUGUST 2025 — PRESENT",
+      title: "Senior Software Engineer & Tech Lead",
+      company: "Ridepally",
+      url: "https://ridepally.com.ng",
+      description:
+        "Engineered Ridepally's core ride-matching algorithm, decreasing average matching time by 28% and boosting driver utilization by 12%. Led engineering roadmap execution, conducted code reviews, and mentored 1 junior engineer. Implemented CI/CD pipelines ensuring 99.9% production uptime.",
+      technologies: [
+        "React",
+        "Node.js",
+        "TypeScript",
+        "AWS",
+        "Docker",
+        "MongoDB",
+      ],
+    },
+    {
+      period: "JANUARY 2023 — JULY 2025",
+      title: "Senior Full-Stack Web Developer",
+      company: "QShop Tech, Inc.",
       url: "https://qshop.tech",
       description:
-        "Build and maintain critical components used to construct QShop's e-commerce platform. Work closely with cross-functional teams, including developers, designers, and product managers.",
+        "Spearheaded implementing a systemized delivery system for an ecommerce platform, resulting in over 20,000+ users. Developed high-performance e-commerce platform using Next.js and NestJS with secure payment integrations, improving conversion rates by 10%. Owned AWS infrastructure deployment and maintenance.",
       technologies: [
         "Next.js",
-        "TypeScript",
         "NestJS",
-        "MongoDB",
+        "TypeScript",
         "AWS",
+        "MongoDB",
         "Stripe",
       ],
     },
     {
-      period: "2021 — 2022",
-      title: "Full-Stack Developer",
-      company: "McMakler",
-      url: "https://mcmakler.de",
+      period: "JULY 2021 — DECEMBER 2023",
+      title: "Senior Frontend Developer",
+      company: "Garmatsch Software",
+      url: "https://garmatsch.de",
       description:
-        "Developed and maintained web applications for Germany's leading real estate platform. Collaborated with product team to implement new features and improve user experience.",
-      technologies: ["React", "Express", "PostgreSQL", "Docker", "TypeScript"],
+        "Developed 10+ AI agents automating business workflows, increasing task efficiency by 30–40% for client operations. Collaborated with cross-functional teams to implement McMakler real estate application, delivering scalable frontend features that improved property search and user experience.",
+      technologies: ["React", "TypeScript", "Next.js", "AI/ML", "PostgreSQL"],
     },
     {
-      period: "2020 — 2021",
-      title: "Software Developer",
-      company: "Ekiti State Government",
-      url: "https://eklmis.ek.gov.ng",
+      period: "JULY 2021 — JULY 2021",
+      title: "Frontend Developer",
+      company: "Coder Consulting",
+      url: "https://coderconsulting.de",
       description:
-        "Built the Labour Market Information System for Ekiti State, helping connect job seekers with employers and providing valuable market insights.",
-      technologies: ["WordPress", "PHP", "MySQL", "Next.js", "NestJS"],
+        "Developed and deployed frontend solutions for multiple client applications including real estate platforms, dating apps, and interview automation apps. Translated Figma designs into React.js interfaces, accelerating MVP launch time by 35%.",
+      technologies: ["React", "JavaScript", "Figma", "CSS", "HTML"],
+    },
+    {
+      period: "JULY 2020 — JANUARY 2021",
+      title: "Software Tester",
+      company: "Coder Consulting",
+      url: "https://coderconsulting.de",
+      description:
+        "Led manual and automated testing efforts for web & mobile applications, creating test plans and regression suites. Implemented automated regression testing, reducing manual QA hours by 50% and accelerating release cycles while improving product stability metrics.",
+      technologies: ["Selenium", "Jest", "Cypress", "JavaScript", "TestRail"],
     },
   ];
 
