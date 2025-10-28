@@ -74,6 +74,32 @@ export default function FeaturedProjects() {
       liveUrl: "https://employers.eklmis.ek.gov.ng/",
       githubUrl: null,
     },
+    {
+      title: "Agora's Landing Page",
+      description:
+        "Landing page for Agora, an initiative designed to awaken, equip, and empower a new generation of Christian marketplace leaders and entrepreneurs across Africa.",
+      image: "/agora.png",
+      technologies: ["NestJS", "NextJS", "Typescript", "Vercel"],
+      liveUrl: "http://agora.edencentreng.org/",
+      githubUrl: null,
+    },
+    {
+      title: "Landing Page for the Forum for Commissioners of Finance, Nigeria",
+      description:
+        "Landing Page for the Forum for Commissioners of Finance, Nigeria",
+      image: "/fcn.png",
+      technologies: ["WordPress", "Elementor", "PHP"],
+      liveUrl: "https://fscfn.ng/",
+      githubUrl: null,
+    },
+    {
+      title: "Mixta Own It 4 Sure",
+      description: "",
+      image: "/mixta.png",
+      technologies: ["NestJS", "NextJS", "Typescript", "Vercel"],
+      liveUrl: "https://fscfn.ng/",
+      githubUrl: null,
+    },
   ];
 
   return (
